@@ -1,26 +1,19 @@
 import streamlit as st
+from datetime import datetime
+import pytz
 
-# Set page configuration
+# Page config
 st.set_page_config(
-    page_title="My Simple Website",
-    page_icon="👋",
+    page_title="My Global Website",
+    page_icon="🌎",
     layout="wide"
 )
 
-# Add a title
-st.title("Welcome to My Simple Website")
+# Main content
+st.title("My Global Website")
 
-# Add some text
-st.write("This is my first Streamlit app!")
+# Display current UTC time
+utc_now = datetime.now(pytz.UTC)
+st.write(f"Current UTC time: {utc_now.strftime('%Y-%m-%d %H:%M:%S')}")
 
-# Add a sidebar
-st.sidebar.title("Navigation")
-
-# Add interactive elements
-name = st.text_input("Enter your name")
-if name:
-    st.write(f"Hello, {name}!")
-
-# Add buttons
-if st.button("Click me!"):
-    st.balloons()
+# Your other website content here
